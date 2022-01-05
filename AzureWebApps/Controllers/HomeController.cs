@@ -20,6 +20,7 @@ namespace AzureWebApps.Controllers
 
         public IActionResult Index()
         {
+            System.Diagnostics.Trace.TraceInformation("Invoking Index Action from Home Controller");
             return View();
         }
 
@@ -31,6 +32,7 @@ namespace AzureWebApps.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
+            System.Diagnostics.Trace.TraceError("Invoking Action from Home Controller resulted in an error");
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
